@@ -11,6 +11,16 @@ typedef struct BoardState{
     unsigned int red_count;
 } BoardState;
 
+//temp
+void print_board(BoardState board){
+    for(int i=0; i<board.size; i++){
+        for(int j=0; j<board.size; j++){
+            printf("%c", board.board[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 void init_state(BoardState* board){
     board->size = 0;
     board->blue_count = 0;
@@ -52,12 +62,21 @@ void fill_diagonal(BoardState* board, const char* diagonal){
             j++;
         }
     }
+    else{
+        int sum = 2*(board->size-1) - (diag_size-1), i = board->size-1, j = sum-i;
+        for(int k=0; k<diag_size; k++){
+            board->board[i][j] = diagonal[k];
+            i--;
+            j++;
+        }
+
+    }
 }
 
 char* get_line(BoardState* board){
     char buffer[MAX_LINE], c, token=' ';
     char* diagonal = (char*)malloc(board->size*sizeof(char));
-    memset(diagonal, '\0', board->size-1);
+    memset(diagonal, '\0', strlen(diagonal));
     int i=0, index=0;
 
     while((c=getchar())!='\n' && c!=EOF){
@@ -77,6 +96,8 @@ char* get_line(BoardState* board){
         }
         i++;
     }
+    if(strcmp(diagonal, "")!=0)
+        fill_diagonal(board, diagonal);
     if(c==EOF)
         return nullptr;
     else if(i==0 && c=='\n') {
@@ -98,13 +119,14 @@ int main() {
     init_state(&board);
     char* buffer;
     while((buffer=get_line(&board))!=nullptr){
-        if(isFirstLine(buffer)){
+        if(board.size==0 && isFirstLine(buffer)){
             board.size = (count_spaces(buffer)-1)/3 + 1;
-            board.board = (char**)malloc(board.size*sizeof(char));
+            board.board = (char**)malloc(board.size*sizeof(char*));
             for(int i=0; i<board.size; i++)
                 board.board[i] = (char*)malloc(board.size*sizeof(char));
             for(int i=0; i<board.size; i++)
-                memset(board.board[i], '\0', board.size);
+                for(int j=0; j<board.size; j++)
+                    board.board[i][j] = '\0';
         }
         else if(strcmp("BOARD_SIZE", buffer)==0){
             printf("%d\n", board.size);
