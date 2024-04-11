@@ -1,0 +1,4 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" -S /tmp/Hex -B /tmp/Hex/cmake-build-docker-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/Hex/cmake-build-docker-debug

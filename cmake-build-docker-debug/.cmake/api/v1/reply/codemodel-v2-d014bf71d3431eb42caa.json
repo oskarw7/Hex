@@ -6,10 +6,10 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Release-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.27"
+						"string" : "3.22.1"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "Release",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Hex::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Hex-Debug-b9b22755970c5e311e4b.json",
+					"jsonFile" : "target-Hex-Release-22beb04993a042174866.json",
 					"name" : "Hex",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/oskarwisniewski/Desktop/Studia/PG kod/Algorytmy i struktury danych/Hex/cmake-build-debug",
-		"source" : "/Users/oskarwisniewski/Desktop/Studia/PG kod/Algorytmy i struktury danych/Hex"
+		"build" : "/tmp/Hex/cmake-build-docker-debug",
+		"source" : "/tmp/Hex"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 6
+		"minor" : 3
 	}
 }
