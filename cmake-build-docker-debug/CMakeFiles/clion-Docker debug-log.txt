@@ -1,4 +1,1 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" -S /tmp/Hex -B /tmp/Hex/cmake-build-docker-debug
--- Configuring done
--- Generating done
--- Build files have been written to: /tmp/Hex/cmake-build-docker-debug
+Failed to launch CMake executable '/usr/bin/cmake': Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running? (Details: [2] No such file or directory) Configure Disable profile
