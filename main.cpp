@@ -146,6 +146,76 @@ int isBoardPossible(BoardState board){
     return 0;
 }
 
+/*
+R w 2, kolej R - 1 B
+R w 2, kolej B - 2 B
+B w 2, kolej R - 2 R
+B w 2, kolej B - 1 R
+
+R w 1, kolej R - 0 B
+R w 1, kolej B - 1 B
+B w 1, kolej R - 1 R
+B w 1, kolej B - 0 R
+*/
+
+char whosTurn(BoardState board){
+    if(board.red_count==board.blue_count)
+        return 'r';
+    else
+        return 'b';
+}
+
+int areFieldsEmpty(BoardState board, int pawn_count){ //plansza na wejsciu nie moze byc zresetowana
+    int filled=0;
+    for(int i=0; i<board.size; i++){
+        for(int j=0; j<board.size; j++){
+            if(filled==pawn_count)
+                return 1;
+            if(board.board[i][j]==' ')
+                filled++;
+        }
+    }
+    if(filled==pawn_count)
+        return 1;
+    return 0;
+}
+
+int generate_move(BoardState board, char color, int moves_left, int moves_count){
+    if(moves_left==0){
+        if(color!=whosTurn(board))
+            return isGameOver(board)==(color=='b'?1:2) && areFieldsEmpty(board, moves_count);
+        else
+            return isGameOver(board)==(color=='b'?1:2) && areFieldsEmpty(board, moves_count-1);
+    }
+    for(int i=0; i<board.size; i++){
+        for(int j=0; j<board.size; j++){
+            if(board.board[i][j]==' ' && !isGameOver(board)){ //+isGameOver
+                board.board[i][j] = color;
+                if(generate_move(board, color, moves_left-1, moves_count)) {
+                    board.board[i][j] = ' ';
+                    return 1;
+                }
+
+                board.board[i][j] = ' ';
+            }
+        }
+    }
+    return 0;
+}
+
+int canWin(BoardState board, char color, int moves_count){
+    if(generate_move(board, color, moves_count, moves_count)){
+        return 1;
+        /*
+        if(color!=whosTurn(board))
+            return areFieldsEmpty(board, moves_count);
+        else
+            return areFieldsEmpty(board, moves_count-1); */
+    }
+
+    return 0;
+}
+
 int isBoardCorrect(BoardState board){
     return board.blue_count==board.red_count || board.blue_count==board.red_count-1;
 }
@@ -279,6 +349,22 @@ int main() {
             } else
                 printf("NO\n\n");
         }
+        else if(strcmp("CAN_RED_WIN_IN_1_MOVE_WITH_NAIVE_OPPONENT", buffer)==0){
+            if(isBoardCorrect(board)){
+                canWin(board, 'r', 1) ? printf("YES\n") : printf("NO\n");
+                canWin(board, 'b', 1) ? printf("YES\n") : printf("NO\n");
+                canWin(board, 'r', 2) ? printf("YES\n") : printf("NO\n");
+                canWin(board, 'b', 2) ? printf("YES\n\n") : printf("NO\n\n");
+            } else
+                printf("NO\nNO\nNO\nNO\n\n");
+        }
+        else if(strcmp("CAN_BLUE_WIN_IN_2_MOVES_WITH_NAIVE_OPPONENT", buffer)==0){
+            for(int i=0; i<board.size; i++)
+                free(board.board[i]);
+            free(board.board);
+            init_state(&board);
+        }
+
     }
     return 0;
 }
