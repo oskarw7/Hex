@@ -81,12 +81,12 @@ clean: CMakeFiles/Hex.dir/clean
 CMakeFiles/Hex.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hex.dir/build.make CMakeFiles/Hex.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hex.dir/build.make CMakeFiles/Hex.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/tmp/Hex/cmake-build-docker-debug/CMakeFiles --progress-num=1,2 "Built target Hex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/tmp/Hex/cmake-build-docker-debug/CMakeFiles --progress-num=1,2,3,4 "Built target Hex"
 .PHONY : CMakeFiles/Hex.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Hex.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/Hex/cmake-build-docker-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/Hex/cmake-build-docker-debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Hex.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/Hex/cmake-build-docker-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Hex.dir/rule

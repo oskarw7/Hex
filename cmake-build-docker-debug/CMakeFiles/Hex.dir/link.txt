@@ -1,1 +1,1 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/Hex.dir/main.cpp.o -o Hex 
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/Hex.dir/main.cpp.o CMakeFiles/Hex.dir/Board.cpp.o CMakeFiles/Hex.dir/InputParser.cpp.o -o Hex 

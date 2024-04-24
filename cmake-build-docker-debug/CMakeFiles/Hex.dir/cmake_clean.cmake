@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Hex.dir/Board.cpp.o"
+  "CMakeFiles/Hex.dir/Board.cpp.o.d"
+  "CMakeFiles/Hex.dir/InputParser.cpp.o"
+  "CMakeFiles/Hex.dir/InputParser.cpp.o.d"
   "CMakeFiles/Hex.dir/main.cpp.o"
   "CMakeFiles/Hex.dir/main.cpp.o.d"
   "Hex"

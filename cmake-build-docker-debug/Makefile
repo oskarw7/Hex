@@ -129,6 +129,54 @@ Hex/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hex.dir/build.make CMakeFiles/Hex.dir/build
 .PHONY : Hex/fast
 
+Board.o: Board.cpp.o
+.PHONY : Board.o
+
+# target to build an object file
+Board.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hex.dir/build.make CMakeFiles/Hex.dir/Board.cpp.o
+.PHONY : Board.cpp.o
+
+Board.i: Board.cpp.i
+.PHONY : Board.i
+
+# target to preprocess a source file
+Board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hex.dir/build.make CMakeFiles/Hex.dir/Board.cpp.i
+.PHONY : Board.cpp.i
+
+Board.s: Board.cpp.s
+.PHONY : Board.s
+
+# target to generate assembly for a file
+Board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hex.dir/build.make CMakeFiles/Hex.dir/Board.cpp.s
+.PHONY : Board.cpp.s
+
+InputParser.o: InputParser.cpp.o
+.PHONY : InputParser.o
+
+# target to build an object file
+InputParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hex.dir/build.make CMakeFiles/Hex.dir/InputParser.cpp.o
+.PHONY : InputParser.cpp.o
+
+InputParser.i: InputParser.cpp.i
+.PHONY : InputParser.i
+
+# target to preprocess a source file
+InputParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hex.dir/build.make CMakeFiles/Hex.dir/InputParser.cpp.i
+.PHONY : InputParser.cpp.i
+
+InputParser.s: InputParser.cpp.s
+.PHONY : InputParser.s
+
+# target to generate assembly for a file
+InputParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hex.dir/build.make CMakeFiles/Hex.dir/InputParser.cpp.s
+.PHONY : InputParser.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +210,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Hex"
+	@echo "... Board.o"
+	@echo "... Board.i"
+	@echo "... Board.s"
+	@echo "... InputParser.o"
+	@echo "... InputParser.i"
+	@echo "... InputParser.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -82,6 +82,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/tmp/Hex/Board.cpp">
+			<Option target="Hex"/>
+		</Unit>
+		<Unit filename="/tmp/Hex/Board.h">
+			<Option target="Hex"/>
+		</Unit>
+		<Unit filename="/tmp/Hex/InputParser.cpp">
+			<Option target="Hex"/>
+		</Unit>
+		<Unit filename="/tmp/Hex/InputParser.h">
+			<Option target="Hex"/>
+		</Unit>
 		<Unit filename="/tmp/Hex/main.cpp">
 			<Option target="Hex"/>
 		</Unit>

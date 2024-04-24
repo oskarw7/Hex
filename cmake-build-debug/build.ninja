@@ -55,6 +55,36 @@ build CMakeFiles/Hex.dir/main.cpp.o: CXX_COMPILER__Hex_unscanned_Debug /Users/os
   OBJECT_DIR = CMakeFiles/Hex.dir
   OBJECT_FILE_DIR = CMakeFiles/Hex.dir
 
+build CMakeFiles/Hex.dir/Board.cpp.o: CXX_COMPILER__Hex_unscanned_Debug /Users/oskarwisniewski/Desktop/Studia/PG$ kod/Algorytmy$ i$ struktury$ danych/Hex/Board.cpp || cmake_object_order_depends_target_Hex
+  DEP_FILE = CMakeFiles/Hex.dir/Board.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Hex.dir
+  OBJECT_FILE_DIR = CMakeFiles/Hex.dir
+
+build CMakeFiles/Hex.dir/ParseInput.cpp.o: CXX_COMPILER__Hex_unscanned_Debug /Users/oskarwisniewski/Desktop/Studia/PG$ kod/Algorytmy$ i$ struktury$ danych/Hex/ParseInput.cpp || cmake_object_order_depends_target_Hex
+  DEP_FILE = CMakeFiles/Hex.dir/ParseInput.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Hex.dir
+  OBJECT_FILE_DIR = CMakeFiles/Hex.dir
+
+build CMakeFiles/Hex.dir/ValidateBoard.cpp.o: CXX_COMPILER__Hex_unscanned_Debug /Users/oskarwisniewski/Desktop/Studia/PG$ kod/Algorytmy$ i$ struktury$ danych/Hex/ValidateBoard.cpp || cmake_object_order_depends_target_Hex
+  DEP_FILE = CMakeFiles/Hex.dir/ValidateBoard.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Hex.dir
+  OBJECT_FILE_DIR = CMakeFiles/Hex.dir
+
+build CMakeFiles/Hex.dir/IsGameOver.cpp.o: CXX_COMPILER__Hex_unscanned_Debug /Users/oskarwisniewski/Desktop/Studia/PG$ kod/Algorytmy$ i$ struktury$ danych/Hex/IsGameOver.cpp || cmake_object_order_depends_target_Hex
+  DEP_FILE = CMakeFiles/Hex.dir/IsGameOver.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Hex.dir
+  OBJECT_FILE_DIR = CMakeFiles/Hex.dir
+
+build CMakeFiles/Hex.dir/CanWin.cpp.o: CXX_COMPILER__Hex_unscanned_Debug /Users/oskarwisniewski/Desktop/Studia/PG$ kod/Algorytmy$ i$ struktury$ danych/Hex/CanWin.cpp || cmake_object_order_depends_target_Hex
+  DEP_FILE = CMakeFiles/Hex.dir/CanWin.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Hex.dir
+  OBJECT_FILE_DIR = CMakeFiles/Hex.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Hex
@@ -63,7 +93,7 @@ build CMakeFiles/Hex.dir/main.cpp.o: CXX_COMPILER__Hex_unscanned_Debug /Users/os
 #############################################
 # Link the executable Hex
 
-build Hex: CXX_EXECUTABLE_LINKER__Hex_Debug CMakeFiles/Hex.dir/main.cpp.o
+build Hex: CXX_EXECUTABLE_LINKER__Hex_Debug CMakeFiles/Hex.dir/main.cpp.o CMakeFiles/Hex.dir/Board.cpp.o CMakeFiles/Hex.dir/ParseInput.cpp.o CMakeFiles/Hex.dir/ValidateBoard.cpp.o CMakeFiles/Hex.dir/IsGameOver.cpp.o CMakeFiles/Hex.dir/CanWin.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
   OBJECT_DIR = CMakeFiles/Hex.dir
   POST_BUILD = :

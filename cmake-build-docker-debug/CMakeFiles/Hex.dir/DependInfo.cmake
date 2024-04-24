@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/tmp/Hex/Board.cpp" "CMakeFiles/Hex.dir/Board.cpp.o" "gcc" "CMakeFiles/Hex.dir/Board.cpp.o.d"
+  "/tmp/Hex/InputParser.cpp" "CMakeFiles/Hex.dir/InputParser.cpp.o" "gcc" "CMakeFiles/Hex.dir/InputParser.cpp.o.d"
   "/tmp/Hex/main.cpp" "CMakeFiles/Hex.dir/main.cpp.o" "gcc" "CMakeFiles/Hex.dir/main.cpp.o.d"
   )
 
