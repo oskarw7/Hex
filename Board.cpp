@@ -9,24 +9,16 @@ int count_size(const char* line){
             count++;
         i++;
     }
-    return count;
+    return (count-1)/3 + 1;
 }
 
 void init_state(BoardState* board){
     board->size = 0;
     board->blue_count = 0;
     board->red_count = 0;
-}
 
-void init_board(BoardState* board, const char* buffer){
-    board->size = (count_size(buffer)-1)/3 + 1;
-    board->board = (char**)malloc(board->size*sizeof(char*));
-
-    for(int i=0; i<board->size; i++)
-        board->board[i] = (char*)malloc(board->size*sizeof(char));
-
-    for(int i=0; i<board->size; i++) {
-        for (int j = 0; j < board->size; j++)
+    for(int i=0; i<MAX_SIZE; i++) {
+        for (int j = 0; j < MAX_SIZE; j++)
             board->board[i][j] = '\0';
     }
 }

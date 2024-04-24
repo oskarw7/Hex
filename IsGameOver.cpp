@@ -1,6 +1,6 @@
 #include "IsGameOver.h"
 
-int dfs(char color, int** isVisited, BoardState board, int y, int x){
+int dfs(char color, int isVisited[MAX_SIZE][MAX_SIZE], BoardState board, int y, int x){
     int dx[ADJACENT_FIELDS] = {-1, 1, 0, 0, -1, 1};
     int dy[ADJACENT_FIELDS] = {0, 0, -1, 1, -1, 1};
 
@@ -22,11 +22,8 @@ int dfs(char color, int** isVisited, BoardState board, int y, int x){
 }
 
 int isGameOver(BoardState board){
-    int** isVisited = (int**)malloc(board.size*sizeof(int*));
+    int isVisited[MAX_SIZE][MAX_SIZE];
     int result=0;
-    for(int i=0; i<board.size; i++)
-        isVisited[i] = (int*)malloc(board.size*sizeof(int));
-
     for(int i=0; i<board.size; i++){
         for(int k=0; k<board.size; k++) {
             for (int j = 0; j < board.size; j++)
@@ -41,10 +38,6 @@ int isGameOver(BoardState board){
             break;
         }
     }
-
-    for(int i=0; i<board.size; i++)
-        free(isVisited[i]);
-    free(isVisited);
 
     return result;
 }

@@ -63,9 +63,6 @@ void get_line(BoardState* board, char* buffer){
     else if(i==0 && c=='\n') {
         buffer[i] = '\n';
         i++;
-        for(int j=0; j<board->size; j++)
-            free(board->board[j]);
-        free(board->board);
         init_state(board);
     }
     buffer[i] = '\0';

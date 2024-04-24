@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #include "Board.h"          // Zawiera funkcje inicjalizujące planszę i jej stan
@@ -23,7 +22,7 @@ void isGameOverController(BoardState board){
 }
 
 // Zarządzanie wynikiem isBoardPossible
-void canWinControllerStart(BoardState board){
+void canWinController(BoardState board){
     if(isBoardCorrect(board)){
         canWinWithNaive(board, 'r', 1, 1) ? printf("YES\n") : printf("NO\n");
         canWinWithNaive(board, 'b', 1, 1) ? printf("YES\n") : printf("NO\n");
@@ -33,14 +32,6 @@ void canWinControllerStart(BoardState board){
         printf("NO\nNO\nNO\nNO\n\n");
 }
 
-// Zwolnienie pamięci planszy po isBoardPossible
-void canWinControllerStop(BoardState* board){
-    for(int i=0; i<board->size; i++)
-        free(board->board[i]);
-    free(board->board);
-    init_state(board);
-}
-
 int main() {
     BoardState board;
     init_state(&board);
@@ -48,7 +39,7 @@ int main() {
     while(strcmp(buffer, "X")!=0){
         get_line(&board, buffer);
         if(board.size==0 && isFirstLine(buffer)){
-            init_board(&board, buffer);
+            board.size = count_size(buffer);
         }
         else if(strcmp("BOARD_SIZE", buffer)==0){
             printf("%d\n", board.size);
@@ -64,15 +55,15 @@ int main() {
         }
         else if(strcmp("IS_BOARD_POSSIBLE", buffer)==0){
             if(isBoardCorrect(board))
-                isBoardPossible(board) ? printf("YES\n") : printf("NO\n");
+                isBoardPossible(board) ? printf("YES\n\n") : printf("NO\n\n");
             else
                 printf("NO\n\n");
         }
         else if(strcmp("CAN_RED_WIN_IN_1_MOVE_WITH_NAIVE_OPPONENT", buffer)==0){
-            canWinControllerStart(board);
+            canWinController(board);
         }
         else if(strcmp("CAN_BLUE_WIN_IN_2_MOVES_WITH_NAIVE_OPPONENT", buffer)==0){
-            canWinControllerStop(&board);
+            init_state(&board);
         }
     }
     return 0;

@@ -9,7 +9,7 @@
 
 // Struktura przechowująca stan planszy
 typedef struct BoardState{
-    char** board;
+    char board[MAX_SIZE][MAX_SIZE];
     int size;
     int blue_count;
     int red_count;
@@ -24,10 +24,7 @@ typedef struct Field{
 // Oblicza rozmiar planszy
 int count_size(const char* line);
 
-// Inicjalizuje stan planszy
+// Zeruje stan planszy)
 void init_state(BoardState* board);
-
-// Inicjalizuje planszę, alokuje pamięć
-void init_board(BoardState* board, const char* buffer);
 
 #endif

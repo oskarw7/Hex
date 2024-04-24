@@ -1,25 +1,23 @@
 #include "ValidateBoard.h"
 
 int remove_pawn(BoardState board, Field field, char color){
-    char** copy = (char**)malloc(board.size*sizeof(char*));
-    for(int i=0; i<board.size; i++)
-        copy[i] = (char*)malloc(board.size*sizeof(char));
+    char copy[MAX_SIZE][MAX_SIZE];
     for(int i=0; i<board.size; i++) {
         for (int j = 0; j < board.size; j++)
             copy[i][j] = board.board[i][j];
     }
-    copy[field.y][field.x] = ' ';
-    BoardState board_copy = {copy, board.size, board.blue_count, board.red_count};
+    board.board[field.y][field.x] = ' ';
 
-    int result = isGameOver(board_copy), returned=0;
+    int result = isGameOver(board), returned=0;
     if(result==1 && color=='b')
         returned = 1;
     else if(result==2 && color=='r')
         returned = 2;
 
-    for(int i=0; i<board.size; i++)
-        free(copy[i]);
-    free(copy);
+    for(int i=0; i<board.size; i++) {
+        for (int j = 0; j < board.size; j++)
+            board.board[i][j] = copy[i][j];
+    }
 
     return returned;
 }
