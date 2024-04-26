@@ -61,8 +61,6 @@ int main() {
         }
         else if(strcmp("CAN_RED_WIN_IN_1_MOVE_WITH_NAIVE_OPPONENT", buffer)==0){
             canWinController(board);
-        }
-        else if(strcmp("CAN_BLUE_WIN_IN_2_MOVES_WITH_NAIVE_OPPONENT", buffer)==0){
             init_state(&board);
         }
     }

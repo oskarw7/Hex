@@ -29,15 +29,17 @@ int canWinWithNaive(BoardState board, char color, int moves_left, int moves_coun
         else
             return isGameOver(board)==(color=='b'?1:2) && areFieldsEmpty(board, moves_count-1);
     }
+    else if(isGameOver(board)){
+        return 0;
+    }
     for(int i=0; i<board.size; i++){
         for(int j=0; j<board.size; j++){
-            if(board.board[i][j]==' ' && !isGameOver(board)){
+            if(board.board[i][j]==' '){
                 board.board[i][j] = color;
                 if(canWinWithNaive(board, color, moves_left-1, moves_count)) {
                     board.board[i][j] = ' ';
                     return 1;
                 }
-
                 board.board[i][j] = ' ';
             }
         }
