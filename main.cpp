@@ -22,7 +22,7 @@ void isGameOverController(BoardState board){
 }
 
 // Zarządzanie wynikiem isBoardPossible
-void canWinController(BoardState board){
+void canWinWithNaiveController(BoardState board){
     if(isBoardCorrect(board)){
         canWinWithNaive(board, 'r', 1, 1) ? printf("YES\n") : printf("NO\n");
         canWinWithNaive(board, 'b', 1, 1) ? printf("YES\n") : printf("NO\n");
@@ -31,6 +31,18 @@ void canWinController(BoardState board){
     } else
         printf("NO\nNO\nNO\nNO\n\n");
 }
+
+void canWinWithPerfectController(BoardState board){
+    if(isBoardCorrect(board)){
+        canWinWithPerfectIn1(board, 'r') ? printf("YES\n") : printf("NO\n");
+        canWinWithPerfectIn1(board, 'b') ? printf("YES\n") : printf("NO\n");
+        canWinWithPerfectIn2(board, 'r') ? printf("YES\n") : printf("NO\n");
+        canWinWithPerfectIn2(board, 'b') ? printf("YES\n\n") : printf("NO\n\n");
+    }
+    else
+        printf("NO\nNO\nNO\nNO\n\n");
+}
+
 
 int main() {
     BoardState board;
@@ -60,7 +72,11 @@ int main() {
                 printf("NO\n\n");
         }
         else if(strcmp("CAN_RED_WIN_IN_1_MOVE_WITH_NAIVE_OPPONENT", buffer)==0){
-            canWinController(board);
+            canWinWithNaiveController(board);
+            init_state(&board);
+        }
+        else if(strcmp("CAN_RED_WIN_IN_1_MOVE_WITH_PERFECT_OPPONENT", buffer)==0){
+            canWinWithPerfectController(board);
             init_state(&board);
         }
     }
