@@ -11,9 +11,9 @@
 void isGameOverController(BoardState board){
     if(isBoardCorrect(board)){
         int result = isGameOver(board);
-        if (result == 1)
+        if (result == BLUE_WON)
             printf("YES BLUE\n");
-        else if (result == 2)
+        else if (result == RED_WON)
             printf("YES RED\n");
         else
             printf("NO\n");

@@ -9,9 +9,9 @@ int remove_pawn(BoardState board, Field field, char color){
     board.board[field.y][field.x] = ' ';
 
     int result = isGameOver(board), returned=0;
-    if(result==1 && color=='b')
+    if(result==BLUE_WON && color=='b')
         returned = 1;
-    else if(result==2 && color=='r')
+    else if(result==RED_WON && color=='r')
         returned = 2;
 
     for(int i=0; i<board.size; i++) {
