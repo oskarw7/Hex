@@ -5,7 +5,7 @@
 #include "ParseInput.h"     // Zawiera funkcje parsujące wejście i wypełniające planszę
 #include "ValidateBoard.h"  // Zawiera funkcje sprawdzające poprawność planszy i czy jej stan jest możliwy
 #include "IsGameOver.h"     // Zawiera funkcje sprawdzające, czy gra się zakończyła
-#include "CanWin.h"         // Zawiera funkcje sprawdzające, czy dany gracz może wygrać z naiwnym przeciwnikiem
+#include "CanWin.h"         // Zawiera funkcje sprawdzające, czy dany gracz może wygrać z naiwnym lub perfekcyjnym przeciwnikiem
 
 // Zarządzanie wynikiem isGameOver
 void isGameOverController(BoardState board){
@@ -21,7 +21,7 @@ void isGameOverController(BoardState board){
         printf("NO\n");
 }
 
-// Zarządzanie wynikiem isBoardPossible
+// Zarządzanie wynikiem canWinWithNaive
 void canWinWithNaiveController(BoardState board){
     if(isBoardCorrect(board)){
         canWinWithNaive(board, 'r', 1, 1) ? printf("YES\n") : printf("NO\n");
@@ -32,6 +32,7 @@ void canWinWithNaiveController(BoardState board){
         printf("NO\nNO\nNO\nNO\n\n");
 }
 
+// Zarządzanie wynikiem canWinWithPerfect
 void canWinWithPerfectController(BoardState board){
     if(isBoardCorrect(board)){
         canWinWithPerfectIn1(board, 'r') ? printf("YES\n") : printf("NO\n");

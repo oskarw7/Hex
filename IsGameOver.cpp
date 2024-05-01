@@ -25,9 +25,9 @@ int isGameOver(BoardState board){
     int isVisited[MAX_SIZE][MAX_SIZE];
     int result=NO_WINNER;
     for(int i=0; i<board.size; i++){
-        for(int k=0; k<board.size; k++) {
-            for (int j = 0; j < board.size; j++)
-                isVisited[k][j] = 0;
+        for(int j=0; j<board.size; j++) {
+            for (int k = 0; k < board.size; k++)
+                isVisited[j][k] = 0;
         }
         if(board.board[0][i]=='b' && dfs('b', isVisited, board, 0, i)==1) {
             result = BLUE_WON;

@@ -32,8 +32,7 @@ void fill_diagonal(BoardState* board, const char* diagonal){
 }
 
 void get_line(BoardState* board, char* buffer){
-    char c, token=' ';
-    char diagonal[MAX_SIZE+1] = {'\0'};
+    char c, token=' ', diagonal[MAX_SIZE+1] = {'\0'};
     int i=0, index=0;
 
     while((c=getchar())!='\n' && c!=EOF){
